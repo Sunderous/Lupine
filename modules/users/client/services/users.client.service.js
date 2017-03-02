@@ -32,10 +32,10 @@
         method: 'POST',
         url: '/api/auth/reset/:token'
       },
-      signup: {
-        method: 'POST',
-        url: '/api/auth/signup'
-      },
+      // signup: {
+      //   method: 'POST',
+      //   url: '/api/auth/signup'
+      // },
       signin: {
         method: 'POST',
         url: '/api/auth/signin'
@@ -59,9 +59,9 @@
           token: token // api expects token as a parameter (i.e. /:token)
         }, passwordDetails).$promise;
       },
-      userSignup: function (credentials) {
-        return this.signup(credentials).$promise;
-      },
+      // userSignup: function (credentials) {
+      //   return this.signup(credentials).$promise;
+      // },
       userSignin: function (credentials) {
         return this.signin(credentials).$promise;
       }
