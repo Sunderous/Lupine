@@ -18,7 +18,7 @@
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'brewing', {
       title: 'Sensors',
-      state: 'sensors.list',
+      state: 'brewing.list',
       roles: ['*']
     });
   }

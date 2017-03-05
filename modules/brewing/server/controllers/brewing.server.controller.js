@@ -77,7 +77,7 @@ exports.delete = function (req, res) {
  * List of Sensors
  */
 exports.list = function (req, res) {
-  Sensor.find().sort('-update').exec(function (err, sensors) {
+  Sensor.find().sort('-updated').exec(function (err, sensors) {
     if (err) {
       return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
