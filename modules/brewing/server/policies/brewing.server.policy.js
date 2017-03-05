@@ -43,10 +43,10 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }, {
       resources: '/api/brewing/sensors',
-      permissions: ['get']
+      permissions: ['get', 'put']
     }, {
       resources: '/api/brewing/sensors/:sensorId',
-      permissions: ['get']
+      permissions: ['get', 'put']
     }]
   }, {
     roles: ['guest'],
@@ -55,10 +55,10 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }, {
       resources: '/api/brewing/sensors',
-      permissions: ['get']
+      permissions: ['get', 'put']
     }, {
       resources: '/api/brewing/sensors/:sensorId',
-      permissions: ['get']
+      permissions: ['get', 'put']
     }]
   }]);
 };
