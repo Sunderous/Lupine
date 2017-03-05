@@ -11,7 +11,7 @@
     $stateProvider
       .state('brewing', {
         abstract: true,
-        url: '/brewing',
+        url: '/brewing/sensors',
         template: '<ui-view/>'
       })
       .state('brewing.list', {
