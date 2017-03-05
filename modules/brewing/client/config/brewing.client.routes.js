@@ -11,11 +11,11 @@
     $stateProvider
       .state('brewing', {
         abstract: true,
-        url: '/brewing/sensors',
+        url: '/brewing',
         template: '<ui-view/>'
       })
       .state('brewing.list', {
-        url: '',
+        url: '/sensors',
         templateUrl: '/modules/brewing/client/views/list-sensors.client.view.html',
         controller: 'SensorsListController',
         controllerAs: 'vm',
