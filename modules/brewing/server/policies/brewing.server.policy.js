@@ -40,7 +40,7 @@ exports.invokeRolesPolicies = function () {
     roles: ['user'],
     allows: [{
       resources: '/api/brewing',
-      permissions: ['get']
+      permissions: ['get', 'put']
     }, {
       resources: '/api/brewing/sensors',
       permissions: ['get', 'put']
@@ -52,7 +52,7 @@ exports.invokeRolesPolicies = function () {
     roles: ['guest'],
     allows: [{
       resources: '/api/brewing',
-      permissions: ['get']
+      permissions: ['get', 'put']
     }, {
       resources: '/api/brewing/sensors',
       permissions: ['get', 'put']
@@ -64,7 +64,7 @@ exports.invokeRolesPolicies = function () {
 };
 
 /**
- * Check If Articles Policy Allows
+ * Check If Brewing Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];

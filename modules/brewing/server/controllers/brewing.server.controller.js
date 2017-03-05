@@ -43,7 +43,7 @@ exports.update = function (req, res) {
   var sensor = req.sensor;
 
   sensor.value = req.body.value;
-  sensor.updated = Date.now;
+  sensor.updated = Date.now();
 
   sensor.save(function (err) {
     if (err) {
