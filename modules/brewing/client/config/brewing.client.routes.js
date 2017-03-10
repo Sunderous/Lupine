@@ -14,8 +14,8 @@
         url: '/brewing',
         template: '<ui-view/>'
       })
-      .state('sensors.list', {
-        url: '',
+      .state('brewing.list', {
+        url: '/sensors',
         templateUrl: '/modules/brewing/client/views/list-sensors.client.view.html',
         controller: 'SensorsListController',
         controllerAs: 'vm',

@@ -16,7 +16,7 @@ module.exports = function (app) {
     .post(sensors.create);
 
   // Single Sensor routes
-  app.route('/api/sensors/:sensorId').all(brewingPolicy.isAllowed)
+  app.route('/api/brewing/sensors/:sensorId').all(brewingPolicy.isAllowed)
     .get(sensors.read)
     .put(sensors.update)
     .delete(sensors.delete);

@@ -8,7 +8,7 @@
   BrewingService.$inject = ['$resource', '$log'];
 
   function BrewingService($resource, $log) {
-    var Sensor = $resource('/api/sensors/:sensorId', {
+    var Sensor = $resource('/api/brewing/sensors/:sensorId', {
       sensorId: '@sensorId'
     }, {
       update: {
