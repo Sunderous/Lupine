@@ -51,10 +51,19 @@ module.exports.initLocalVariables = function (app) {
   });
 };
 
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+};
+
 /**
  * Initialize application middleware
  */
 module.exports.initMiddleware = function (app) {
+  app.use(allowCrossDomain);
+
   // Should be placed before express.static
   app.use(compress({
     filter: function (req, res) {
