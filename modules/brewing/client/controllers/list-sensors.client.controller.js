@@ -28,6 +28,7 @@
             // Add an event listener to the 'chatMessage' event
             Socket.on('sensor.updated', function(sensor) {
                 console.log(sensor);
+                vm.updateSensor(sensor);
             });
 
             // Remove the event listener when the controller instance is destroyed
@@ -35,6 +36,15 @@
                 Socket.removeListener('chatMessage');
             });
         }
+
+        function updateSensor(sensor) {
+            vm.sensors.forEach(function(currentSensor) {
+                if (sensor.sensorId === currentSensor.sensorId) {
+                    currentSensor.value = sensor.value;
+                    console.log(currentSensor);
+                }
+            });
+        };
     }
 
 
