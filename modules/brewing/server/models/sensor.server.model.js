@@ -38,8 +38,6 @@ var SensorSchema = new Schema({
     },
     value: {
         type: Number,
-        min: -500,
-        max: 500,
         default: 0,
         required: 'Sensor Value cannot be blank'
     },
