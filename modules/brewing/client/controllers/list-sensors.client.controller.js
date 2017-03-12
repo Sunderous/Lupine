@@ -10,7 +10,7 @@
     function SensorsListController($scope, $state, BrewingService, Socket, Authentication) {
         var vm = this;
 
-        //vm.sensors = BrewingService.query();
+        vm.sensors = BrewingService.query();
 
         init();
 
