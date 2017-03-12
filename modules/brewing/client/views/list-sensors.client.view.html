@@ -1,18 +1,15 @@
 <section>
-  <div class="page-header">
-    <h1>Sensors</h1>
-  </div>
-  <div class="list-group">
-    <a ng-repeat="sensor in vm.sensors" ui-sref="sensors.view({ sensorId: sensor.sensorId })" class="list-group-item">
-      <small class="list-group-item-text">
+    <div class="page-header">
+        <h1>Sensors</h1>
+    </div>
+    <div class="list-group">
+        <a ng-repeat="sensor in vm.sensors" ui-sref="sensors.view({ sensorId: sensor.sensorId })" class="list-group-item">
+            <small class="list-group-item-text">
         Updated
         <span ng-bind="sensor.updated | date:'mediumDate'"></span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="sensor.name"></h4>
-      <p class="list-group-item-text" ng-bind="sensor.value"></p>
-      <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{sensor.value}}" aria-valuemin="0" aria-valuemax="200" ng-style="{'width' : '{{ sensor.value }}'% }"></div>
-      </div>
-    </a>
-  </div>
+            <h4 class="list-group-item-heading" ng-bind="sensor.name"></h4>
+            <p class="list-group-item-text" ng-bind="sensor.value"></p>
+        </a>
+    </div>
 </section>
