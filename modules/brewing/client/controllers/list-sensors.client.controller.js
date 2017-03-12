@@ -7,7 +7,7 @@
 
     SensorsListController.$inject = ['$scope', '$state', 'BrewingService', 'Socket', 'Authentication'];
 
-    function SensorsListController(BrewingService, Socket) {
+    function SensorsListController($scope, $state, BrewingService, Socket, Authentication) {
         var vm = this;
 
         //vm.sensors = BrewingService.query();
