@@ -10,7 +10,7 @@
     function SensorsListController(BrewingService, Socket) {
         var vm = this;
 
-        vm.sensors = BrewingService.query();
+        //vm.sensors = BrewingService.query();
 
         init();
 
