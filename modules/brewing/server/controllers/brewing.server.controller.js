@@ -51,6 +51,9 @@ exports.update = function(req, res) {
                 message: errorHandler.getErrorMessage(err)
             });
         } else {
+            // Need socket.io logic here for realtime updates
+            var socketio = req.app.get('socketio');
+            socketio.sockets.emit('sensor.updated', sensor);
             res.json(sensor);
         }
     });
