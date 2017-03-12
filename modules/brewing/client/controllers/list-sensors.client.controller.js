@@ -5,9 +5,9 @@
         .module('brewing')
         .controller('SensorsListController', SensorsListController);
 
-    SensorsListController.$inject = ['$scope', '$state', 'BrewingService', 'Socket', 'Authentication'];
+    SensorsListController.$inject = ['$scope', 'BrewingService', 'Socket'];
 
-    function SensorsListController($scope, $state, BrewingService, Socket, Authentication) {
+    function SensorsListController($scope, BrewingService, Socket) {
         var vm = this;
 
         vm.sensors = BrewingService.query();
@@ -15,10 +15,6 @@
         init();
 
         function init() {
-            // If user is not signed in then redirect back home
-            if (!Authentication.user) {
-                $state.go('home');
-            }
 
             // Make sure the Socket is connected
             if (!Socket.socket) {
