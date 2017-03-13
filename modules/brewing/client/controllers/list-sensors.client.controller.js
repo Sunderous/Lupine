@@ -1,6 +1,9 @@
 (function() {
     'use strict';
 
+    var FusionCharts = require('fusioncharts');
+    require('fusioncharts/fusioncharts.charts');
+
     angular
         .module('brewing')
         .controller('SensorsListController', SensorsListController);
@@ -13,6 +16,17 @@
         vm.sensors = BrewingService.query();
 
         init();
+
+        var chart = new FusionCharts({
+            "type": "column2d",
+            "width": "500",
+            "height": "300",
+            "dataFormat": "json",
+            "dataSource": {
+                chart: {},
+                data: [{ value: 500 }, { value: 600 }, { value: 700 }]
+            }
+        }).render("chartContainer");
 
         function init() {
 
@@ -27,7 +41,6 @@
                 vm.sensors.forEach(function(currentSensor) {
                     if (sensor.sensorId === currentSensor.sensorId) {
                         currentSensor.value = sensor.value;
-                        console.log(currentSensor);
                     }
                 });
             });
@@ -37,15 +50,6 @@
                 Socket.removeListener('chatMessage');
             });
         }
-
-        // function updateSensor(sensor) {
-        //     vm.sensors.forEach(function(currentSensor) {
-        //         if (sensor.sensorId === currentSensor.sensorId) {
-        //             currentSensor.value = sensor.value;
-        //             console.log(currentSensor);
-        //         }
-        //     });
-        // };
     }
 
 
