@@ -20,38 +20,36 @@ var config = require('../config'),
     path = require('path'),
     _ = require('lodash'),
     lusca = require('lusca'),
-    FusionCharts = require('fusioncharts');
-require('fusioncharts/fusioncharts.charts');
 
-/**
- * Initialize local variables
- */
-module.exports.initLocalVariables = function(app) {
-    // Setting application local variables
-    app.locals.title = config.app.title;
-    app.locals.description = config.app.description;
-    if (config.secure && config.secure.ssl === true) {
-        app.locals.secure = config.secure.ssl;
-    }
-    app.locals.keywords = config.app.keywords;
-    app.locals.googleAnalyticsTrackingID = config.app.googleAnalyticsTrackingID;
-    app.locals.facebookAppId = config.facebook.clientID;
-    app.locals.twitterUsername = config.twitter.username;
-    app.locals.jsFiles = config.files.client.js;
-    app.locals.cssFiles = config.files.client.css;
-    app.locals.livereload = config.livereload;
-    app.locals.logo = config.logo;
-    app.locals.favicon = config.favicon;
-    app.locals.env = process.env.NODE_ENV;
-    app.locals.domain = config.domain;
+    /**
+     * Initialize local variables
+     */
+    module.exports.initLocalVariables = function(app) {
+        // Setting application local variables
+        app.locals.title = config.app.title;
+        app.locals.description = config.app.description;
+        if (config.secure && config.secure.ssl === true) {
+            app.locals.secure = config.secure.ssl;
+        }
+        app.locals.keywords = config.app.keywords;
+        app.locals.googleAnalyticsTrackingID = config.app.googleAnalyticsTrackingID;
+        app.locals.facebookAppId = config.facebook.clientID;
+        app.locals.twitterUsername = config.twitter.username;
+        app.locals.jsFiles = config.files.client.js;
+        app.locals.cssFiles = config.files.client.css;
+        app.locals.livereload = config.livereload;
+        app.locals.logo = config.logo;
+        app.locals.favicon = config.favicon;
+        app.locals.env = process.env.NODE_ENV;
+        app.locals.domain = config.domain;
 
-    // Passing the request url to environment locals
-    app.use(function(req, res, next) {
-        res.locals.host = req.protocol + '://' + req.hostname;
-        res.locals.url = req.protocol + '://' + req.headers.host + req.originalUrl;
-        next();
-    });
-};
+        // Passing the request url to environment locals
+        app.use(function(req, res, next) {
+            res.locals.host = req.protocol + '://' + req.hostname;
+            res.locals.url = req.protocol + '://' + req.headers.host + req.originalUrl;
+            next();
+        });
+    };
 
 //CORS middleware
 var allowCrossDomain = function(req, res, next) {
