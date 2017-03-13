@@ -27,7 +27,7 @@ module.exports = {
                 'public/lib/fusioncharts/fusioncharts.js',
                 'public/lib/fusioncharts/fusioncharts.charts.js',
                 'public/lib/fusioncharts/fusioncharts.widgets.js',
-                'public/lib/angular-fusioncharts/angular-fusioncharts.js',
+                'public/lib/angular-fusioncharts/dist/angular-fusioncharts.js',
                 // endbower
             ],
             tests: ['public/lib/angular-mocks/angular-mocks.js']
