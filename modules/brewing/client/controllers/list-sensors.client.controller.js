@@ -1,8 +1,8 @@
 (function() {
     'use strict';
 
-    // var FusionCharts = require('fusioncharts');
-    // require('fusioncharts/fusioncharts.charts');
+    var FusionCharts = require('fusioncharts');
+    require('fusioncharts/fusioncharts.charts');
 
     angular
         .module('brewing')
