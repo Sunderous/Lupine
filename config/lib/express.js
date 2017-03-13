@@ -19,7 +19,9 @@ var config = require('../config'),
     hbs = require('express-hbs'),
     path = require('path'),
     _ = require('lodash'),
-    lusca = require('lusca');
+    lusca = require('lusca'),
+    FusionCharts = require('fusioncharts');
+require('fusioncharts/fusioncharts.charts');
 
 /**
  * Initialize local variables
