@@ -12,9 +12,6 @@
             <p class="list-group-item-text" ng-bind="sensor.value"></p>
         </a>
     </div>
-    <div>
-        <fusioncharts id="mychartcontainer" chartid="mychart" width="400" height="300" type="column2d" dataSource="{{dataSource}}">
-
-        </fusioncharts>
+    <div fusioncharts width="400" height="300" type="column2d" datasource="{{dataSource}}">
     </div>
 </section>
